@@ -105,31 +105,36 @@ Also, the standard scaffold views expect model variables of the form `<propertyN
 
 
 Grails lets you generate a controller and the views used to create the above interface from the command line. To generate a controller type:
+grails 6.2.0 no longer supports the "generate-*" command instead the gradlew command should be used like correctly mentioned in title "2.13 Generating an Application" of the documentation
+[source,groovy]
+----
+$ ./gradlew runCommand -Pargs="generate-all myapp.Book"
+----
 
 [source,groovy]
 ----
-grails generate-controller Book
+$ ./gradlew runCommand -Pargs="generate-controller Book"
 ----
 
 or to generate the views:
 
 [source,groovy]
 ----
-grails generate-views Book
+$ ./gradlew runCommand -Pargs="generate-views Book"
 ----
 
 or to generate everything:
 
 [source,groovy]
 ----
-grails generate-all Book
+$ ./gradlew runCommand -Pargs="generate-all Book"
 ----
 
 If you have a domain class in a package or are generating from a https://hibernate.org[Hibernate mapped class] remember to include the fully qualified package name:
 
 [source,groovy]
 ----
-grails generate-all com.bookstore.Book
+$ ./gradlew runCommand -Pargs="generate-all com.bookstore.Book"
 ----
 
 
